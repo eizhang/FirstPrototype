@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+  <meta charset="utf-8" />
+  <script src="text_block.js"></script>
+  <script>
+
+  window.onload = function(){
+      var canvas = document.getElementById("paper");
+      var anno = new DocumentAnno("Lorem ipsum dolor sit amet, duo quando petentium et. Ut dicunt probatus scripserit eam. Vero mucius has no, at sea velit homero,", canvas);
+
+      var listener = function(e) {
+          if (e.key == "1") {
+          }
+          if (e.key == "2") {
+          }
+          if (e.key == "3") {
+          }
+          if (e.key == "8") {
+          }
+          if (e.key == "9") {
+          }
+          if (e.key == "0") {
+          }
+          if (e.key == " ") {
+              anno.handle_next();
+          }
+          anno.clear();
+          anno.draw();
+      }
+
+      window.addEventListener("keydown", listener, true);
+
+      anno.draw();
+
+  };
+
+  </script>
+  <style>
+    canvas{border:#666 1px solid;}
+  </style>
+</head>
+  <body>
+  <!-- <button onclick="draw(0,0)">Draw</button> -->
+  <h1> Word Bank:</h1>
+    <canvas id="paper" width="1000" height="600"></canvas>
+  </body>  
+</html>
