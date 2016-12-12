@@ -24,6 +24,9 @@ class DocumentAnno {
         this.words_per_line = 6;
         this.lines_per_scr = 6;
     }
+    clear() {
+        this.cref.width = this.cref.width 
+    }
     draw() {
         for (var i = 0; i < this.blocks.length; i++)
         {
@@ -35,5 +38,9 @@ class DocumentAnno {
             this.blocks[i].draw(w, h);
         }
     }
-    
+    handle_button() {
+    }
+    handle_next() {
+        this.blocks.splice(0, this.words_per_line);
+    }
 }

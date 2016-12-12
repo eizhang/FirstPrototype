@@ -1,4 +1,3 @@
-<!-- http://www.youtube.com/watch?v=hUCT4b4wa-8 -->
 <!DOCTYPE html>
 <html lang ="en">
 <head>
@@ -7,24 +6,33 @@
   <script>
 
   window.onload = function(){
-    var canvas = document.getElementById("paper");
-      c = canvas.getContext("2d");
-      var r = {x:10,y:20,width:70,height:40};
-      r.fillStyle = "black";
-
-      var Y = 0;
-      var block = new TextBlock("hello", canvas);
+      var canvas = document.getElementById("paper");
       var anno = new DocumentAnno("Lorem ipsum dolor sit amet, duo quando petentium et. Ut dicunt probatus scripserit eam. Vero mucius has no, at sea velit homero,", canvas);
 
-      var hi = window.setInterval(function(){
-
+      var listener = function(e) {
+          if (e.key == "1") {
+          }
+          if (e.key == "2") {
+          }
+          if (e.key == "3") {
+          }
+          if (e.key == "8") {
+          }
+          if (e.key == "9") {
+          }
+          if (e.key == "0") {
+          }
+          if (e.key == " ") {
+              anno.handle_next();
+          }
+          anno.clear();
           anno.draw();
+      }
 
-      }, 50)
+      window.addEventListener("keydown", listener, true);
 
-      document.addEventListener("click", function(){
-        clearInterval(hi);
-      });
+      anno.draw();
+
   };
 
   </script>
