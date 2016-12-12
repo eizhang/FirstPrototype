@@ -15,5 +15,25 @@ class TextBlock {
     }
 }
 
-class Sentence {
+class DocumentAnno {
+    constructor(words, cv) {
+        this.blocks = words.split(" ").map(function(word){
+            return new TextBlock(word, cv);
+        });
+        this.cref = cv;
+        this.words_per_line = 6;
+        this.lines_per_scr = 6;
+    }
+    draw() {
+        for (var i = 0; i < this.blocks.length; i++)
+        {
+            var x = i % this.words_per_line;
+            var y = Math.floor(i / this.words_per_line);
+
+            var w = (x + 0.5) * this.cref.width / (this.words_per_line + 1);
+            var h = (y + 1) * this.cref.height / (this.lines_per_scr + 1);
+            this.blocks[i].draw(w, h);
+        }
+    }
+    
 }

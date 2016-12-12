@@ -13,43 +13,12 @@
       r.fillStyle = "black";
 
       var Y = 0;
-      block = new TextBlock("hello", canvas);
+      var block = new TextBlock("hello", canvas);
+      var anno = new DocumentAnno("Lorem ipsum dolor sit amet, duo quando petentium et. Ut dicunt probatus scripserit eam. Vero mucius has no, at sea velit homero,", canvas);
 
       var hi = window.setInterval(function(){
 
-        c.fillStyle = "white";
-        c.fillRect(0, 0, canvas.width, canvas.height);
-
-        c.fillStyle = "black";
-        c.fillRect(canvas.width * (1/8), 500, canvas.width * .75, 50);
-        Y += 3;
-
-        block.draw(150, 100);
-
-        c.fillStyle = r.fillStyle;
-        c.fillRect(150, Y, r.width, r.height);
-
-        c.fillStyle = "white";
-        c.font = "30px Arial";
-        c.fillText("help", 155, 30 + Y);
-
-        c.fillStyle = "black";
-        c.fillRect(250, Y, 70, 40);
-        c.fillStyle = "white";
-        c.font = "30px Arial";
-        c.fillText("help", 255, 30 + Y);
-
-        c.fillStyle = "black";
-        c.fillRect(350, Y, 70, 40);
-        c.fillStyle = "white";
-        c.font = "30px Arial";
-        c.fillText("help", 355, 30 + Y);
-
-        c.fillStyle = "black";
-        c.fillRect(450, Y, 70, 40);
-        c.fillStyle = "white";
-        c.font = "30px Arial";
-        c.fillText("help", 455, 30 + Y);
+          anno.draw();
 
       }, 50)
 
