@@ -9,6 +9,9 @@ class TextBlock {
         if (this.highlight)
         {
             ctxt.fillStyle = "blue";
+        } else
+        {
+            ctxt.fillStyle = "black";
         }
         ctxt.font = "30px arial";
         ctxt.fillText(this.text, w, h);
@@ -38,7 +41,8 @@ class DocumentAnno {
             this.blocks[i].draw(w, h);
         }
     }
-    handle_button() {
+    handle_button(i) {
+        this.blocks[i].highlight = !this.blocks[i].highlight
     }
     handle_next() {
         this.blocks.splice(0, this.words_per_line);
