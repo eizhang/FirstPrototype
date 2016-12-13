@@ -6,8 +6,19 @@
   <script>
 
   window.onload = function(){
+      var text = `student: Hi. I wanted some advice on what courses to take next semester.
+          advisor: It looks like you took 203 and 280. The most logical courses to take next are the other prerequisites for the CS degree.
+          advisor: How many CS courses do you plan to take next term?
+          student: I plan to take only one.
+          advisor: Your choices include 376 which is a theory class, 281 which is the sequel to 280, and finally 370 which is about hardware.
+          advisor: Are you more interesteed in programming, theory, or hardware?
+          student: Hardware
+          student: How difficult is each class?
+          advisor: OK. Of these three courses, 281 is rated most difficult, then 370 (the hardware course). 376 is the easiest.
+          student: Okay, looks like Ill take 370. Thank you!
+          advisor: This makes sense. Bye!`
       var canvas = document.getElementById("paper");
-      var anno = new DocumentAnno("Lorem ipsum dolor sit amet, duo quando petentium et. Ut dicunt probatus scripserit eam. Vero mucius has no, at sea velit homero,", canvas);
+      var anno = new DocumentAnno(text, canvas);
 
       var listener = function(e) {
           if (e.key == "1") {
